@@ -1,0 +1,18 @@
+{
+  "ecmaVersion": 6,
+  "libs": [
+    "node"
+  ],
+  "dontLoad": [
+    "dist/js/*"
+  ],
+  "plugins": {
+    "es_modules": {},
+    "node": {},
+    "lint": {},
+    "doc_comment": {
+      "fullDocs": true,
+      "strong": true
+    }
+  }
+}

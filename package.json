@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@3846masa/linebot": "^0.1.1",
     "line-bot-sdk": "^0.1.4"
   }
 }
