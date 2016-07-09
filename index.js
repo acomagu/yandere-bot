@@ -1,4 +1,5 @@
 const LineBot = require('@3846masa/linebot');
+const fs = require('fs');
 
 const STAGE = {
   INITIAL: Symbol(),
@@ -110,7 +111,7 @@ function getMessage(state) {
 }
 
 class State {
-  constructor(stage = STAGE.INITIAL, repeated = 0}) {
+  constructor(stage = STAGE.INITIAL, repeated = 0) {
     this.stage = stage;
     this.repeated = repeated;
   }
