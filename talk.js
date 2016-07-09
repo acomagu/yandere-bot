@@ -10,6 +10,13 @@ const STAGE = {
   END_MARRIED: Symbol()
 };
 
+class State {
+  constructor(stage = STAGE.INITIAL, repeated = 0) {
+    this.stage = stage;
+    this.repeated = repeated;
+  }
+}
+
 module.exports = {
   updateState: (lastState, text) => {
     if(text == '/reset') {
@@ -77,9 +84,3 @@ module.exports = {
   State: State
 };
 
-class State {
-  constructor(stage = STAGE.INITIAL, repeated = 0}) {
-    this.stage = stage;
-    this.repeated = repeated;
-  }
-}

@@ -11,19 +11,6 @@ const bot = new LineBot({
   MID: process.env['LINE_MID']
 });
 
-module.exports = {
-  listen: ((port) =>
-    new Promise((resolve, reject) => {
-      bot.on('message', (res) => {
-        resolve(res);
-      });
-      bot.listen(port);
-    })
-  ),
-  User: User
-};
-
-
 class User {
   constructor(bot, user) {
     this.bot = bot;
@@ -41,3 +28,17 @@ class User {
     });
   }
 }
+
+module.exports = {
+  listen: ((port) =>
+    new Promise((resolve, reject) => {
+      bot.on('message', (res) => {
+        resolve(res);
+      });
+      bot.listen(port);
+    })
+  ),
+  User: User
+};
+
+
