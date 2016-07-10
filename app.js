@@ -19,7 +19,7 @@ line.listen(process.env.PORT || 3000).then((res) => {
 
     states[content.from] = newState;
   }
-});
+}).catch((err) => { console.log(err); });
 
 
 //rinna
