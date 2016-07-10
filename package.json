@@ -26,6 +26,7 @@
     "morgan": "^1.7.0",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
-    "twit": "^2.2.4"
+    "twit": "^2.2.4",
+    "@3846masa/linebot": "*"
   }
 }
