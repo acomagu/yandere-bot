@@ -40,7 +40,8 @@ module.exports = {
       console.log("Listening in " + port + " ...");
     }).catch((err) => { console.log(err); })
   ),
-  User: User
+  User: User,
+  LineBot: LineBot
 };
 
 
