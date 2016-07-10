@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 const STAGE = {
   INITIAL: Symbol(),
   GREETING: Symbol(),
@@ -9,6 +11,8 @@ const STAGE = {
   END: Symbol(),
   END_MARRIED: Symbol()
 };
+
+const conversation = JSON.parse(fs.readFileSync('conversation.json'));
 
 class State {
   constructor(stage = STAGE.INITIAL, repeated = 0) {
@@ -51,30 +55,30 @@ module.exports = {
       return new State(STAGE.INITIAL);
     }
   },
-  getMessage: (state) => {
+  getMessages: (state) => {
     const conversationWithRinna = ['りんなとの雑談♥'];
     if(state.stage == STAGE.GREETING) {
       return conversation['RINA']['GREETING'];
-    } else if(lastState.stage == STAGE.NAME) {
+    } else if(state.stage == STAGE.NAME) {
       return conversation['RINA']['NAME'];
-    } else if(lastState.stage == STAGE.FRIEND) {
-      if(lastState.repeated < 10) {
+    } else if(state.stage == STAGE.FRIEND) {
+      if(state.repeated < 10) {
         return conversationWithRinna;
       }
       return conversation['RINA']['FRIEND'];
-    } else if(lastState.stage == STAGE.FRIEND_REPLY) {
-      return conversation['RINA']['FRIEND_REPLY'];
-    } else if(lastState.stage == STAGE.PRESS) {
-      if(lastState.repeated < 5) {
+    } else if(state.stage == STAGE.FRIEND_REPLY) {
+      return [conversation['RINA']['FRIEND_REPLY_CANDIDATES'][Math.floor(Math.random() * 10)]];
+    } else if(state.stage == STAGE.PRESS) {
+      if(state.repeated < 5) {
         return conversationWithRinna;
       }
       return conversation['RINA']['PRESS'];
-    } else if(lastState.stage == STAGE.ASTROLOGY) {
-      if(lastState.repeated < 10) {
+    } else if(state.stage == STAGE.ASTROLOGY) {
+      if(state.repeated < 10) {
         return conversationWithRinna;
       }
       return conversation['RINA']['ASTROLOGY'];
-    } else if(lastState.stage == STAGE.END) {
+    } else if(state.stage == STAGE.END) {
       return conversation['RINA']['END'];
     } else if(state.stage == STAGE.END_MARRIED) {
       return ['結婚しちゃった☆', '- Fin -'];
