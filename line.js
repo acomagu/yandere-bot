@@ -30,7 +30,7 @@ class User {
 }
 
 module.exports = {
-  listen: ((port) => {
+  listen: ((port) =>
     new Promise((resolve, reject) => {
       bot.on('message', (res) => {
         resolve(res);
