@@ -37,6 +37,7 @@ module.exports = {
         resolve(res);
       });
       bot.listen(port);
+      console.log("Listening in " + port + " ...");
     })
   ),
   User: User
