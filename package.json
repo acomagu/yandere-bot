@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "HTTPS_PROXY=$FIXIE_URL node app.js"
+    "start": "export HTTPS_PROXY=$FIXIE_URL; export HTTP_PROXY=$FIXIE_URL; node app.js"
   },
   "engines": {
     "node": "6.2.2"
