@@ -11,5 +11,17 @@
   "devDependencies": {
     "@3846masa/linebot": "^0.1.1",
     "line-bot-sdk": "^0.1.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "connect-ensure-login": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "express-session": "^1.14.0",
+    "fb": "^1.1.1",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "twit": "^2.2.4"
   }
 }
