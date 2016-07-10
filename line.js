@@ -1,7 +1,7 @@
 'use strict';
 const LineBot = require('@3846masa/linebot');
 
-if(!process.env['LINE_CHANNEL_ID'] || !process.env['LINE_CHANNEL_SECRET'] || !process.env['LINE_CHANNEL_MID']) {
+if(!process.env['LINE_CHANNEL_ID'] || !process.env['LINE_CHANNEL_SECRET'] || !process.env['LINE_MID']) {
   console.error('Set LINE_CHANNEL_ID, LINE_CHANNEL_SECRET and LINE_MID as environment variables.');
   process.exit(1);
 }
