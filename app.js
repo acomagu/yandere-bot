@@ -7,6 +7,7 @@ const line = require('./line.js');
 let states = {};
 
 line.listen(process.env.PORT || 3000).then((res) => {
+  console.log("Handle: " + res);
   const content = res.content;
   if(content.contentType === line.LineBot.CONST.CONTENT_TYPE.TEXT) {
     const user = new line.User(bot, content.from);
