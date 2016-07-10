@@ -18,7 +18,7 @@ class User {
   }
   sendText(text) {
     bot.postText({
-      user: user,
+      user: this.user,
       text: text
     });
   }
