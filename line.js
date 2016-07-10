@@ -37,7 +37,7 @@ module.exports = {
       });
       bot.listen(port);
       console.log("Listening in " + port + " ...");
-    }).catch((err) => { console.log(err); })
+    }).catch((err) => { console.log('2: ' + err); })
   ),
   User: User,
   LineBot: LineBot

@@ -7,7 +7,7 @@ const line = require('./line.js');
 let states = {};
 
 line.listen(process.env.PORT || 3000).then((res) => {
-  console.log("Handle: " + res);
+  console.log("Handle: " + JSON.stringify(res));
   const content = res.content;
   if(content.contentType === line.LineBot.CONST.CONTENT_TYPE.TEXT) {
     const user = new line.User(content.from);
@@ -20,7 +20,7 @@ line.listen(process.env.PORT || 3000).then((res) => {
 
     states[content.from] = newState;
   }
-}).catch((err) => { console.log(err); });
+}).catch((err) => { console.log('1: ' + err); });
 
 
 //rinna
