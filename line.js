@@ -13,12 +13,11 @@ const bot = new LineBot({
 });
 
 class User {
-  constructor(bot, user) {
-    this.bot = bot;
+  constructor(user) {
     this.user = user;
   }
   sendText(text) {
-    this.bot.postText({
+    bot.postText({
       user: user,
       text: text
     });
@@ -31,7 +30,7 @@ class User {
 }
 
 module.exports = {
-  listen: ((port) =>
+  listen: ((port) => {
     new Promise((resolve, reject) => {
       bot.on('message', (res) => {
         resolve(res);
