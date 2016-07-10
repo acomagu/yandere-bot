@@ -1,3 +1,4 @@
+'use strict';
 const LineBot = require('@3846masa/linebot');
 
 if(!process.env['LINE_CHANNEL_ID'] || !process.env['LINE_CHANNEL_SECRET'] || !process.env['LINE_CHANNEL_MID']) {

@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "HTTPS_PROXY=$FIXIE_URL node app.js"
   },
+  "engines": {
+    "node": "6.2.2"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {

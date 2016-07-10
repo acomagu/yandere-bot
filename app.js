@@ -1,5 +1,8 @@
+'use strict';
 const talk = require('./talk.js');
 const line = require('./line.js');
+
+
 
 let states = {};
 
